@@ -29,3 +29,5 @@ public class Movie {
     @DocumentReference
     private List<Review> reviewIds;
 }
+
+
