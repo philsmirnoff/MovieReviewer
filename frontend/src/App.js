@@ -1,6 +1,10 @@
 import "./App.css";
 import api from "./api/axiosConfig";
 import { useState, useEffect } from "react";
+import Layout from './components/Layout';
+import {Routes, Route} from 'react-router-dom';
+import Home from "./components/Home/Home";
+
 
 function App() {
   const [movies, setMovies] = useState();
@@ -9,7 +13,6 @@ function App() {
     try {
       const response = await api.get("/api/v1/movies");
       setMovies(response.data);
-      console.log(response.data);
     } catch (err) {
       console.log(err);
     }
@@ -21,7 +24,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Home />} ></Route>
+        </Route>
+      </Routes>
     </div>
   );
 }
