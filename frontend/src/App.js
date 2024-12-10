@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Layout from "./components/Layout";
 import Home from "./components/Home/Home";
 import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header/Header";
 
 function App() {
   const [movies, setMovies] = useState();
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home movies={movies} />}></Route>
