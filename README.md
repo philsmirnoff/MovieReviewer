@@ -1,6 +1,6 @@
 # MovieReviewer
 ## Full-Stack Movie Review Application
-### A comprehensive full-stack application that enables users to browse movies, view details, and submit reviews. Built using Java Spring Boot for the backend and React.js for the frontend, this project demonstrates expertise in modern web application development.
+### A full-stack application that enables users to browse movies, view details, and submit reviews. Built using Java Spring Boot for the backend and React.js for the frontend.
 
 ## Key Features
 ### Backend (Java Spring Boot):
