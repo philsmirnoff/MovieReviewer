@@ -56,7 +56,7 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
                   <ReviewForm
                     handleSubmit={addReview}
                     revText={revText}
-                    labelText="Write a Review?"
+                    labelText="Write a Review!"
                   />
                 </Col>
               </Row>
@@ -81,7 +81,6 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
               </>
             );
           })}
-
 
           {reviews?.map((r) => {
             return (

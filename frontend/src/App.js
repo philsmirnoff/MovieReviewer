@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Reviews from "./components/Reviews/Reviews";
 import Trailer from "./components/Trailer/Trailer";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   const [movies, setMovies] = useState();
@@ -60,6 +61,7 @@ function App() {
               />
             }
           ></Route>
+         <Route path="*" element = {<NotFound/>}></Route>
         </Route>
       </Routes>
     </div>
