@@ -11,14 +11,13 @@ import Trailer from "./components/Trailer/Trailer";
 import NotFound from "./components/NotFound/NotFound";
 
 function App() {
-  const [movies, setMovies] = useState();
-  const [movie, setMovie] = useState();
+  const [movies, setMovies] = useState([]);
+  const [movie, setMovie] = useState(null);
   const [reviews, setReviews] = useState([]);
 
   const getMovies = async () => {
     try {
       const response = await api.get("/api/v1/movies");
-      console.log(response.data);
       setMovies(response.data);
     } catch (err) {
       console.log(err);

@@ -1,11 +1,9 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import api from "../../api/axiosConfig";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import ReviewForm from "../ReviewForm/ReviewForm";
-
-import React from "react";
 
 const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
   const revText = useRef();
@@ -22,6 +20,7 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
     const rev = revText.current;
 
     try {
+      // eslint-disable-next-line no-unused-vars
       const response = await api.post("/api/v1/reviews", {
         reviewBody: rev.value,
         imdbId: movieId,
@@ -44,11 +43,15 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
           <h3>Reviews</h3>
         </Col>
       </Row>
-      <Row className="mt-2">
-        <Col>
-          <img src={movie?.poster} alt="" />
+      <Row className="mt-2 flex-column flex-md-row">
+        <Col xs={12} md={4} className="mb-3 mb-md-0">
+          <img
+            src={movie?.poster}
+            alt=""
+            style={{ maxWidth: "100%", height: "auto", display: "flex" }}
+          />
         </Col>
-        <Col>
+        <Col xs={12} md={8}>
           {
             <>
               <Row>
@@ -67,9 +70,9 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
               </Row>
             </>
           }
-          {movie?.reviewIds.map((sub) => {
+          {movie?.reviewIds.map((sub, index) => {
             return (
-              <>
+              <React.Fragment key={`movie-review-${index}`}>
                 <Row>
                   <Col>{sub.body}</Col>
                 </Row>
@@ -78,13 +81,13 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
                     <hr />
                   </Col>
                 </Row>
-              </>
+              </React.Fragment>
             );
           })}
 
-          {reviews?.map((r) => {
+          {reviews?.map((r, index) => {
             return (
-              <>
+              <React.Fragment key={`user-review-${index}`}>
                 <Row>
                   <Col>{r.body}</Col>
                 </Row>
@@ -93,7 +96,7 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
                     <hr />
                   </Col>
                 </Row>
-              </>
+              </React.Fragment>
             );
           })}
         </Col>
