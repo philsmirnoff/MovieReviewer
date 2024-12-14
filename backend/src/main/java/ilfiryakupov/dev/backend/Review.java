@@ -22,4 +22,9 @@ public class Review {
     public Review(String body) {
         this.body = body;
     }
+
+    // Getter for 'body'
+    public String getBody() {
+        return body;
+    }
 }
