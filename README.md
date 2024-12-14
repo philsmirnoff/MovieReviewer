@@ -1,6 +1,6 @@
-# MovieReviewer
+# AnonymousMovieReviewer
 ## Full-Stack Movie Review Application
-### A full-stack application that enables users to browse movies, view details, and submit reviews. Built using Java Spring Boot for the backend and React.js for the frontend.
+### A full-stack application that enables users to browse movies, view details, and anonymously submit reviews. Built using Java Spring Boot for the backend and React.js for the frontend.
 
 ## Key Features
 ### Backend (Java Spring Boot):
@@ -19,8 +19,9 @@ Implemented React Router for dynamic routing and navigation.
 
 Java,
 Spring Boot,
-MongoDB,
-Maven
+Maven,
+MongoDB
+
 
 ### Frontend:
 JavaScript,
