@@ -21,11 +21,11 @@
 - Integrated the frontend with backend APIs using Axios for seamless data exchange.
 - Implemented React Router for dynamic routing and navigation.
 
-### Backend (Java, Spring Boot, MongoDB):
+### Backend (Java, Spring Boot, MongoDB, JUnit):
 - Developed RESTful APIs to fetch movie data and handle user reviews using Spring Boot.
 - Leveraged MongoDB for efficient data storage and retrieval of movies and reviews,
-- Ensured security with CORS configurations and input validations.
-- Utilized service and repository design patterns for clean and maintainable code.
+- Utilized JUnit for creating unit tests.
+
 
 
 
